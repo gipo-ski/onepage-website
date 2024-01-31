@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onepage Website</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
     <header class="bg-teal-700 text-white sticky top-0 z-10">
@@ -15,14 +16,18 @@
         <div>
           <button
             id="hamburger-button"
-            class="text-3xl md:hidden cursor-pointer"
+            class="text-3xl md:hidden cursor-pointer relative w-8 h-8"
           >
-            &#127828;
+            <!-- simple option 1: without animation -->
+            <!-- &#127828; -->
+            <div
+              class="hover:bg-teal-200 bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:hover:bg-teal-200 before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:hover:bg-teal-200 after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500 toggle-btn"
+            ></div>
           </button>
           <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
-            <a href="#home" class="hover:text-teal-200 hover:opacity-80"
+            <!-- <a href="#home" class="hover:text-teal-200 hover:opacity-80"
               >Home</a
-            >
+            > -->
             <a href="#about" class="hover:text-teal-200 hover:opacity-80"
               >About</a
             >
@@ -38,27 +43,48 @@
           </nav>
         </div>
       </section>
-      <section id="mobile-menu" class="absolute top-0 bg-black w-full text-5xl flex flex-col justify-center">
-        <button class="text-6xl self-end px-6 hover:text-teal-200 hover:opacity-80">
+      <!-- simple option 1: without animation -->
+      <!-- add class="top-0" to properties of section id= "mobile-menu" AND DELETE class="top-68" (68px = this menubar height) which is for animated option 2. -->
+      <section
+        id="mobile-menu"
+        class="absolute top-68 bg-black w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden"
+      >
+        <!-- simple option 1: without animation -->
+        <!-- <button class="text-6xl self-end px-6 hover:text-teal-200 hover:opacity-80">
           &#10761;
-        </button>
-        <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-          <a href="#home" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+        </button> -->
+        <nav
+          class="flex flex-col min-h-screen items-center py-8"
+          aria-label="mobile"
+        >
+          <a
+            href="#home"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >Home</a
           >
-          <a href="#about" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+          <a
+            href="#about"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >About</a
           >
-          <a href="#services" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+          <a
+            href="#services"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >Services</a
           >
-          <a href="#testimonials" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+          <a
+            href="#testimonials"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >Testimonials</a
           >
-          <a href="#contact" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+          <a
+            href="#contact"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >Contact Us</a
           >
-          <a href="#footer" class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
+          <a
+            href="#footer"
+            class="hover:text-teal-200 hover:opacity-80 w-full text-center py-6"
             >Legal</a
           >
         </nav>
@@ -135,35 +161,64 @@
         <br />
         <article class="sm:w-1/2">
           <h1
-            class="-mb-5 text-6xl text-center text-orange-300 hover:text-nowrap hover:text-8xl hover:text-orange-950 z-0 hover:z-50"
+            class="mb-10 text-6xl text-center text-orange-300 hover:text-nowrap hover:text-8xl hover:text-orange-950 z-0 hover:z-50"
           >
             Hero Image
           </h1>
           <img
             src="./img/mywebpeople.png"
             alt="giposki web people"
-            class="w-3/4 mx-auto"
+            class="w-3/4 mx-auto mb-16"
           />
+          <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" />
         </article>
       </section>
 
       <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" />
 
-      <section id="about" class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+      <section
+        id="about"
+        class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height"
+      >
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
           About Our Websites
         </h2>
-        <p class="text-xl text-justify sm:text-2xl mb-6 text-slate-900 dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto assumenda debitis fugit nostrum distinctio perferendis in iure veniam? Earum nisi atque magnam ut sequi voluptatum vero, minus ratione vel culpa! Maxime impedit alias, a, quisquam, ratione nihil ab facilis laudantium est quae minima reprehenderit voluptatem sapiente veritatis officia. Labore consectetur ducimus nam dignissimos. Consectetur in quasi nostrum sint quod error sequi explicabo nihil voluptatem. Voluptatibus aliquam, unde dolore praesentium rem dolorum perspiciatis ullam rerum vitae architecto cumque at consectetur aperiam eius quam quisquam sequi minus earum repudiandae libero, accusamus harum debitis reprehenderit nihil? Iure rem ut inventore molestiae nemo asperiores.</p><br>
+        <p
+          class="text-xl text-justify sm:text-2xl mb-6 text-slate-900 dark:text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          assumenda debitis fugit nostrum distinctio perferendis in iure veniam?
+          Earum nisi atque magnam ut sequi voluptatum vero, minus ratione vel
+          culpa! Maxime impedit alias, a, quisquam, ratione nihil ab facilis
+          laudantium est quae minima reprehenderit voluptatem sapiente veritatis
+          officia. Labore consectetur ducimus nam dignissimos. Consectetur in
+          quasi nostrum sint quod error sequi explicabo nihil voluptatem.
+          Voluptatibus aliquam, unde dolore praesentium rem dolorum perspiciatis
+          ullam rerum vitae architecto cumque at consectetur aperiam eius quam
+          quisquam sequi minus earum repudiandae libero, accusamus harum debitis
+          reprehenderit nihil? Iure rem ut inventore molestiae nemo asperiores.
+        </p>
+        <br />
 
-        <p class="text-xl text-justify sm:text-2xl mb-6 text-slate-900 dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod itaque non, vitae error porro voluptatibus veritatis explicabo quia rem molestiae temporibus repellat laborum inventore consectetur! Alias laboriosam, odit facere sapiente numquam reprehenderit veritatis blanditiis in.</p>
-      
+        <p
+          class="text-xl text-justify sm:text-2xl mb-6 text-slate-900 dark:text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod itaque
+          non, vitae error porro voluptatibus veritatis explicabo quia rem
+          molestiae temporibus repellat laborum inventore consectetur! Alias
+          laboriosam, odit facere sapiente numquam reprehenderit veritatis
+          blanditiis in.
+        </p>
       </section>
 
       <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
 
-      <section id="services" class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+      <section
+        id="services"
+        class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height"
+      >
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
@@ -265,7 +320,10 @@
 
       <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
 
-      <section id="testimonials" class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+      <section
+        id="testimonials"
+        class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height"
+      >
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
@@ -329,36 +387,64 @@
 
       <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
 
-      <section id="contact" class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+      <section
+        id="contact"
+        class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height"
+      >
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
           Our Website Contact Details.
         </h2>
-        <form action="" class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-left gap-4"
+        <form
+          action=""
+          class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-left gap-4"
         >
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required minlenght="3" maxlength="60" placeholder="Your Subject" class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:boder-none">
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:boder-none"></textarea>
-        <button class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded-xl border border-solid border-slate-900 dark:border-none">Submit</button>
-      </form>
-           
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            minlenght="3"
+            maxlength="60"
+            placeholder="Your Subject"
+            class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:boder-none"
+          />
+          <label for="message">Message:</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+            class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:boder-none"
+          ></textarea>
+          <button
+            class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded-xl border border-solid border-slate-900 dark:border-none"
+          >
+            Submit
+          </button>
+        </form>
 
-      <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
-      
+        <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
+      </section>
     </main>
     <footer id="footer" class="bg-teal-700 text-white text-xl">
-      <section class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between">
+      <section
+        class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between"
+      >
         <address>
-          <h2>GIPOSKI Websites, Inc.</h2>
-          123 Giposki Close<br>
-          Websites Avenue, Coventry CV1 1AA<br>
-          Email: <a href="mailto:inquiries@giposki.com">inquiries@giposki.com</a><br>
+          <h2>GIPOSKI Websites Design & Build, Inc.</h2>
+          123 Giposki Close<br />
+          Websites Avenue, Coventry CV1 1AA<br />
+          Email: <a href="mailto:inquiries@giposki.com">inquiries@giposki.com</a
+          ><br />
           Phone: <a href="tel:+1234567890">(123) 456-7890</a>
         </address>
         <nav class="hidden md:flex flex-col gap-2" aria-label="footer">
-          <a href="#home" class="hover:capacity-90">Home</a>
+          <!-- <a href="#home" class="hover:capacity-90">Home</a> -->
           <a href="#about" class="hover:capacity-90">About</a>
           <a href="#services" class="hover:capacity-90">Services</a>
           <a href="#testimonials" class="hover:capacity-90">Testimonials</a>
@@ -370,15 +456,5 @@
         </div>
       </section>
     </footer>
-    <script>
-    // Get the current date
-    let today = new Date();
-    // Get the current year
-    let currentYear = today.getFullYear();
-    // Select the span element by its id
-    let dateElement = document.getElementById("year");
-    // Set the content of the span element to the current year
-    dateElement.innerHTML = currentYear;
-  </script>
   </body>
 </html>
