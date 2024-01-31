@@ -610,6 +610,10 @@ video {
   margin-bottom: 4rem;
 }
 
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -1448,7 +1452,7 @@ video {
   }
 }
 
-@media (min-aspect-ratio: 13/20) {
+@media (max-aspect-ratio: 13/20) {
   .tallscreen\:section-min-height {
     min-height: calc(100vh - 68px);
   }

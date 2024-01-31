@@ -20,8 +20,9 @@
           >
             <!-- simple option 1: without animation -->
             <!-- &#127828; -->
+            <!-- toggle-btn class NOT necessary to be added to div below, it's being read by javaScript from main.js added to script tag in header -->
             <div
-              class="hover:bg-teal-200 bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:hover:bg-teal-200 before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:hover:bg-teal-200 after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500 toggle-btn"
+              class="hover:bg-teal-200 bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:hover:bg-teal-200 before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:hover:bg-teal-200 after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"
             ></div>
           </button>
           <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
@@ -109,7 +110,7 @@
                 class="lowercase hover:uppercase p-4 text-5xl text-slate-300 dark:text-orange-300/20 hover:text-7xl hover:text-orange-500 hover:block"
               >
                 awesome</span
-              ><span class="text-6xl text-orange-800 font-serif -ml-6"
+              ><br /><span class="text-6xl text-orange-800 font-serif -ml-6"
                 >Websites</span
               >. <br
             /></span>
@@ -170,11 +171,11 @@
             alt="giposki web people"
             class="w-3/4 mx-auto mb-16"
           />
-          <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" />
+          <!-- <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" /> -->
         </article>
       </section>
 
-      <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" />
+      <!-- <hr class="mx-auto w-1/2 mt-8 bg-black dark:bg-white" /> -->
 
       <section
         id="about"
@@ -427,9 +428,9 @@
             Submit
           </button>
         </form>
-
-        <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8" />
       </section>
+
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white mt-8 mb-32" />
     </main>
     <footer id="footer" class="bg-teal-700 text-white text-xl">
       <section
